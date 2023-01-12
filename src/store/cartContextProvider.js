@@ -49,6 +49,30 @@ const reducerFunc = (prevState, action) => {
       totalAmount: updatedTotalAmount,
     };
   }
+// Если тип действия 'REMOVE_ITEM'
+  if(action.type === 'REMOVE_ITEM') {
+    const findIdx = prevState.items.findIndex((item) => item.id === action.id);
+    const existingItem = prevState.items[findIdx];
+    const updatedTotalAmount = prevState.totalAmount - existingItem.price
+    // let updatedItem;
+    let updatedItems;
+    if(existingItem.amount > 1) {
+      const updatedItem = {
+        ...existingItem,
+        amount: existingItem.amount-1
+      }
+      updatedItems = [...prevState.items]
+      updatedItems[findIdx] = updatedItem
+    } else {
+      updatedItems = prevState.items.filter((item) => item.id !== action.id)
+    }
+
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount
+    }
+
+  }
 };
 
 const CartContextProvider = (props) => {

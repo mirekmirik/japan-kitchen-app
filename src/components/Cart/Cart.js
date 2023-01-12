@@ -9,9 +9,17 @@ const Cart = (props) => {
   console.log("cartCtx", cartContext.items);
   const hasItems = cartContext.items.length > 0;
 
-  const removeCartItemHandler = (id) => {};
+  const removeCartItemHandler = (id) => {
+    cartContext.removeItem(id)
+  };
 
-  const addCartItemhandler = (item) => {};
+  const addCartItemhandler = (item) => {
+        cartContext.addItem({
+          ...item,
+          amount: 1
+        })
+  };
+
 
   const cartItems = (
     <ul className={styles["cart-items"]}>
@@ -33,7 +41,7 @@ const Cart = (props) => {
       {cartItems}
       <div className={styles.total}>
         <span>Итого</span>
-        <span>{cartContext.totalAmount.toFixed(2)}$</span>
+        <span>{Math.abs(cartContext.totalAmount.toFixed(2))}$</span>
       </div>
       <div className={styles.actions}>
         <button className={styles["button-alt"]} onClick={props.onHideCart}>
