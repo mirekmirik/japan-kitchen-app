@@ -4,6 +4,20 @@
     padding: 0;
     max-height: 20rem;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .cart-item {
+    display:flex;
+    flex-direction: column;
+    row-gap: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
   }
   
   .total {

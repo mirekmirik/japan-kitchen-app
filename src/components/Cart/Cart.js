@@ -1,11 +1,29 @@
+import React, { useContext } from "react";
 import Modal from "../UI/Modal";
 import styles from "./Cart.module.css";
+import CartContext from "../../store/cart-context";
+import CartItem from "./CartItem/CartItem";
 
 const Cart = (props) => {
+  const cartContext = useContext(CartContext);
+  console.log("cartCtx", cartContext.items);
+  const hasItems = cartContext.items.length > 0;
+
+  const removeCartItemHandler = (id) => {};
+
+  const addCartItemhandler = (item) => {};
+
   const cartItems = (
     <ul className={styles["cart-items"]}>
-      {[{ id: "m1", name: "Sushi", amount: 2, price: 10.99 }].map((item) => (
-        <li>{item.name}</li>
+      {cartContext.items.map((item) => (
+        <CartItem
+          key={item.id}
+          name={item.name}
+          amount={item.amount}
+          price={item.price}
+          onAdd={addCartItemhandler.bind(null, item)}
+          onRemove={removeCartItemHandler.bind(null, item.id)}
+        />
       ))}
     </ul>
   );
@@ -15,14 +33,15 @@ const Cart = (props) => {
       {cartItems}
       <div className={styles.total}>
         <span>Итого</span>
-        <span>49.99</span>
+        <span>{cartContext.totalAmount.toFixed(2)}$</span>
       </div>
       <div className={styles.actions}>
-        <button className={styles["button-alt"]} onClick={props.onHideCart}>Закрыть</button>
-        <button className={styles.button}>Заказать</button>
+        <button className={styles["button-alt"]} onClick={props.onHideCart}>
+          Закрыть
+        </button>
+        {hasItems && <button className={styles.button}>Заказать</button>}
       </div>
     </Modal>
-    
   );
 };
 
