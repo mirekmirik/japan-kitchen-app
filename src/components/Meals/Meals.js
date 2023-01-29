@@ -1,17 +1,14 @@
-import React from "react"
-import MealList from "./MealList"
-import Promotext from "./Promotext"
+import PromoText from "./PromoText";
+import MealList from "./MealList";
+import React from "react";
 
-const Meals = (props) => {
-    return (
-        <React.Fragment>
-            <Promotext/>
-            <MealList/>
-        </React.Fragment>
-    )
-}
+const Meals = () => {
+  return (
+    <React.Fragment>
+      <PromoText />
+      <MealList />
+    </React.Fragment>
+  );
+};
 
-
-export default Meals
-
-
+export default Meals;
