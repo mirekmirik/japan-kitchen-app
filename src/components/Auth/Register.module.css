@@ -1,0 +1,119 @@
+/* .form-login {
+} */
+
+.form {
+    background-color: #6b068a;
+    box-shadow: 1px 1px 7px rgb(43, 42, 42);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
+    /* margin: 1rem 0; */
+    row-gap: 15px;
+    height: 25rem;
+    overflow: auto;
+  }
+
+  .register-title {
+    font-weight: 600;
+    color: rgb(35, 223, 248);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .control {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .control label {
+    color: #ffff;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  
+  .control input {
+    padding: 5px 5px;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 20rem;
+    max-width: 100%;
+  }
+  .inputs-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .inputs-inner span {
+    color: rgb(52, 5, 5);
+    font-weight: 600;
+  }
+
+  
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  
+  .actions button {
+    font: inherit;
+    color: black;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #6b068a;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+    /* margin-top: 15px; */
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #fff;
+  }
+  
+  .actions .submit:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  .actions .submit {
+    border: 1px solid #6b068a;
+    background-color: #fff;
+    color: black;
+  }
+  
+  .actions .submit:hover,
+  .actions .submit:active {
+    background-color: #8c6898;
+    border-color: #47035d;
+    color: black;
+  }
+  
+  .invalid label {
+    color: red;
+  }
+  
+  .invalid input {
+    border-color: red;
+    background-color: #dccccc;
+  }
+  
+  .error-message {
+    color: red;
+    margin: 0;
+    padding: 0;
+  }
+
+  .register-text {
+    color: #cac2ff;
+  }

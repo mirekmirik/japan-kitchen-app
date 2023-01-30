@@ -27,3 +27,13 @@
   object-fit: cover;
   transform: rotateZ(-7deg) translateY(-2rem) translateX(5rem);
 }
+
+.controls {
+  display: flex;
+  column-gap: 15px;
+}
+
+.controls p {
+  font-weight: 600;
+  cursor: pointer;
+}
